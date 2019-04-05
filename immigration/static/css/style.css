@@ -1,0 +1,19 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#map1,
+body,
+html {
+  height:35em;
+}
+
+#map1{
+  width:58em;
+}
+
+#dropdown01{
+  margin-right: 60px;
+  align-content: center;
+}
