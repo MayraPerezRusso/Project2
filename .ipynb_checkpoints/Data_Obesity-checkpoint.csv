@@ -1,0 +1,176 @@
+﻿City,State cod,State,Year,Gender,Adult Obesity %,Percent of Adults Who Meet CDC-Recommended Physical Activity Levels
+Baltimore,MD,Maryland,2010,Female,32.8,62.7
+Baltimore,MD,Maryland,2010,Male,25.1,75.2
+Baltimore,MD,Maryland,2011,Female,39.4,71.1
+Baltimore,MD,Maryland,2011,Male,35,65.2
+Baltimore,MD,Maryland,2012,Female,34.2,71.4
+Baltimore,MD,Maryland,2012,Male,27,68.1
+Boston,MA,Massachusetts,2010,Female,21.3,
+Boston,MA,Massachusetts,2010,Male,19.3,
+Boston,MA,Massachusetts,2013,Female,23.1,20.2
+Boston,MA,Massachusetts,2013,Male,20.2,28.5
+Boston,MA,Massachusetts,2015,Female,24.4,18.1
+Boston,MA,Massachusetts,2015,Male,19.2,19.6
+Charlotte,NC,North Carolina,2010,Female,16.84,
+Charlotte,NC,North Carolina,2010,Male,35.3,
+Charlotte,NC,North Carolina,2011,Female,28.09,43.3
+Charlotte,NC,North Carolina,2011,Male,23.03,53.25
+Charlotte,NC,North Carolina,2012,Female,22.48,
+Charlotte,NC,North Carolina,2012,Male,30.49,
+Charlotte,NC,North Carolina,2013,Female,22.32,44.2
+Charlotte,NC,North Carolina,2013,Male,24.65,50.95
+Charlotte,NC,North Carolina,2014,Female,21.55,
+Charlotte,NC,North Carolina,2014,Male,26.85,
+Charlotte,NC,North Carolina,2015,Female,33.01,41.92
+Charlotte,NC,North Carolina,2015,Male,27.11,48.64
+Chicago,IL,Illinois,2010,Female,31.4,
+Chicago,IL,Illinois,2010,Male,31.4,
+Chicago,IL,Illinois,2011,Female,28.4,48.7
+Chicago,IL,Illinois,2011,Male,20.5,52.8
+Columbus,OH,Ohio,2011,Female,36.7,44.7
+Columbus,OH,Ohio,2011,Male,24.9,41.7
+Columbus,OH,Ohio,2012,Female,35.5,
+Columbus,OH,Ohio,2012,Male,27,
+Columbus,OH,Ohio,2013,Female,36.1,51.1
+Columbus,OH,Ohio,2013,Male,26.8,48.9
+Columbus,OH,Ohio,2014,Female,40.4,
+Columbus,OH,Ohio,2014,Male,29.4,
+Columbus,OH,Ohio,2015,Female,29.4,47.3
+Columbus,OH,Ohio,2015,Male,37.6,53.1
+Columbus,OH,Ohio,2016,Female,31,
+Columbus,OH,Ohio,2016,Male,35.2,
+Denver,CO,Colorado,2011,Female,21.1,64.17
+Denver,CO,Colorado,2011,Male,21.1,59.59
+Denver,CO,Colorado,2012,Female,19.3,
+Denver,CO,Colorado,2012,Male,18.8,
+Denver,CO,Colorado,2013,Female,24.1,54.91
+Denver,CO,Colorado,2013,Male,16.1,59.86
+Denver,CO,Colorado,2014,Female,20.59,
+Denver,CO,Colorado,2014,Male,14.48,
+Denver,CO,Colorado,2015,Female,19.02,56.65
+Denver,CO,Colorado,2015,Male,17.62,61.4
+Denver,CO,Colorado,2016,Female,19.25,
+Denver,CO,Colorado,2016,Male,17.75,
+Detroit,MI,Michigan,2011,Female,46.3,
+Detroit,MI,Michigan,2011,Male,32.5,
+Detroit,MI,Michigan,2012,Female,40.6,
+Detroit,MI,Michigan,2012,Male,41.5,
+Detroit,MI,Michigan,2013,Female,47.1,16.6
+Detroit,MI,Michigan,2013,Male,26.5,20.3
+Detroit,MI,Michigan,2014,Female,36.4,
+Detroit,MI,Michigan,2014,Male,27.2,
+Detroit,MI,Michigan,2015,Female,,10.7
+Detroit,MI,Michigan,2015,Male,,25.9
+Houston,TX,Texas,2010,Female,29.7,
+Houston,TX,Texas,2010,Male,31.5,
+Indianapolis,IN,Indiana,2013,Female,33.3,28.6
+Indianapolis,IN,Indiana,2013,Male,28.1,32.3
+Indianapolis,IN,Indiana,2014,Female,34.6,
+Indianapolis,IN,Indiana,2014,Male,29.9,
+Indianapolis,IN,Indiana,2015,Female,28.6,36.7
+Indianapolis,IN,Indiana,2015,Male,28.3,35.1
+Las Vegas,NV,Nevada,2011,Female,23.3,73.2
+Las Vegas,NV,Nevada,2011,Male,24.7,76
+Las Vegas,NV,Nevada,2012,Female,27.4,75.8
+Las Vegas,NV,Nevada,2012,Male,27.4,80.3
+Las Vegas,NV,Nevada,2013,Female,27.1,71.6
+Las Vegas,NV,Nevada,2013,Male,25.4,80
+Las Vegas,NV,Nevada,2014,Female,25.9,74
+Las Vegas,NV,Nevada,2014,Male,32.2,79.3
+Las Vegas,NV,Nevada,2015,Female,25.2,69.8
+Las Vegas,NV,Nevada,2015,Male,28.9,79.4
+Los Angeles,CA,California,2011,Female,24.5,25
+Los Angeles,CA,California,2011,Male,18.9,33
+Miami,FL,Florida,2010,Female,24.8,
+Miami,FL,Florida,2010,Male,34.1,
+Miami,FL,Florida,2013,Female,27.2,
+Miami,FL,Florida,2013,Male,20.2,
+New York,NY,New York,2011,Female,25.6,
+New York,NY,New York,2011,Male,21.3,
+New York,NY,New York,2012,Female,27.2,
+New York,NY,New York,2012,Male,20.7,
+New York,NY,New York,2013,Female,24.6,64.1
+New York,NY,New York,2013,Male,21.9,71
+New York,NY,New York,2014,Female,26.2,66.8
+New York,NY,New York,2014,Male,22.8,72.1
+New York,NY,New York,2015,Female,25.5,
+New York,NY,New York,2015,Male,22.3,
+Oakland,CA,California,2011,Female,23.7,39
+Oakland,CA,California,2011,Male,18.3,24.6
+Oakland,CA,California,2012,Female,21.5,
+Oakland,CA,California,2012,Male,21.4,
+Oakland,CA,California,2013,Female,21.5,
+Oakland,CA,California,2013,Male,26.2,
+Oakland,CA,California,2014,Female,28.4,
+Oakland,CA,California,2014,Male,11.5,
+Oakland,CA,California,2015,Female,22,
+Philadelphia,PA,Pennsylvania,2010,Female,34.4,
+Philadelphia,PA,Pennsylvania,2010,Male,29.3,
+Philadelphia,PA,Pennsylvania,2011,Female,33,40
+Philadelphia,PA,Pennsylvania,2011,Male,27,50
+Philadelphia,PA,Pennsylvania,2012,Female,36,
+Philadelphia,PA,Pennsylvania,2012,Male,24,
+Philadelphia,PA,Pennsylvania,2013,Female,33,37
+Philadelphia,PA,Pennsylvania,2013,Male,24,44
+Philadelphia,PA,Pennsylvania,2014,Female,36,
+Philadelphia,PA,Pennsylvania,2014,Male,30,
+Philadelphia,PA,Pennsylvania,2015,Female,32,48
+Philadelphia,PA,Pennsylvania,2015,Male,23,49
+Philadelphia,PA,Pennsylvania,2016,Female,36,
+Philadelphia,PA,Pennsylvania,2016,Male,20,
+Phoenix,AZ,Arizona,2011,Female,24.6,50.3
+Phoenix,AZ,Arizona,2011,Male,25.8,54.8
+Phoenix,AZ,Arizona,2012,Female,24.6,
+Phoenix,AZ,Arizona,2012,Male,26.1,
+Phoenix,AZ,Arizona,2013,Female,23.7,47.9
+Phoenix,AZ,Arizona,2013,Male,25.3,54.6
+Portland,OR,Oregon,2014,Female,25.3,
+Portland,OR,Oregon,2014,Male,19.7,
+Portland,OR,Oregon,2015,Female,19.9,58.7
+Portland,OR,Oregon,2015,Male,24.8,62.5
+San Antonio,TX,Texas,2010,Female,33.8,
+San Antonio,TX,Texas,2010,Male,30.8,
+San Antonio,TX,Texas,2011,Female,35.3,43.1
+San Antonio,TX,Texas,2011,Male,31,51.6
+San Antonio,TX,Texas,2012,Female,31,
+San Antonio,TX,Texas,2012,Male,27.7,
+San Antonio,TX,Texas,2013,Female,36.1,40.7
+San Antonio,TX,Texas,2013,Male,33.3,47.8
+San Antonio,TX,Texas,2014,Female,31.1,
+San Antonio,TX,Texas,2014,Male,33,
+San Antonio,TX,Texas,2015,Female,32.1,40.4
+San Antonio,TX,Texas,2015,Male,39,48.5
+San Diego,CA,California,2011,Female,20.3,
+San Diego,CA,California,2011,Male,20.3,
+San Diego,CA,California,2012,Female,19,16.5
+San Diego,CA,California,2012,Male,26.4,25.1
+San Diego,CA,California,2013,Female,18.8,56.2
+San Diego,CA,California,2013,Male,22.8,56.9
+San Diego,CA,California,2014,Female,24.4,
+San Diego,CA,California,2014,Male,21.5,
+San Diego,CA,California,2015,Female,22.2,52.2
+San Diego,CA,California,2015,Male,23.6,49.6
+San Francisco,CA,California,2011,Female,11.7,
+San Francisco,CA,California,2011,Male,11.5,
+San Francisco,CA,California,2012,Female,8.7,
+San Francisco,CA,California,2012,Male,10,
+San Francisco,CA,California,2013,Male,16,
+San Jose,CA,California,2013,Female,22,55
+San Jose,CA,California,2013,Male,22,52
+Seattle,WA,Washington,2010,Female,17,
+Seattle,WA,Washington,2010,Male,18,
+Seattle,WA,Washington,2011,Female,17,33.1
+Seattle,WA,Washington,2011,Male,26,46.9
+Seattle,WA,Washington,2012,Female,20,
+Seattle,WA,Washington,2012,Male,23,
+Seattle,WA,Washington,2013,Female,20,37.2
+Seattle,WA,Washington,2013,Male,23,39.5
+Seattle,WA,Washington,2014,Female,17.1,
+Seattle,WA,Washington,2015,Female,13.7,25
+Seattle,WA,Washington,2015,Male,16.6,28
+Washington,DC,District of Columbia,2011,Female,28.4,
+Washington,DC,District of Columbia,2011,Male,18.6,
+Washington,DC,District of Columbia,2012,Female,25.5,
+Washington,DC,District of Columbia,2012,Male,17.9,
+Washington,DC,District of Columbia,2013,Female,24.9,
+Washington,DC,District of Columbia,2013,Male,20.6,
