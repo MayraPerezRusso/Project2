@@ -18,16 +18,9 @@ app = Flask(__name__)
 # # Database Setup
 # #################################################
 
-<<<<<<< HEAD
 app.config["SQLALCHEMY_DATABASE_URI"] = "DATA PATH HERE"
 db = SQLAlchemy(app)
 
-=======
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/DataFinal.sqlite"
-db = SQLAlchemy(app)
-
-# # reflect an existing database into a new model
->>>>>>> 691cb887fda610c672124fc87e9baebe5105b116
 Base = automap_base()
 # # reflect the tables
 Base.prepare(db.engine, reflect=True)
@@ -93,10 +86,11 @@ def sample_metadata(sample):
         Samples_Metadata.YEAR,
         Samples_Metadata.Latitude,
         Samples_Metadata.Longitude,
+      
     ]
 
     results = db.session.query(*sel).all()
-
+    
     # Create a dictionary entry for each row of metadata information!
     sample_metadata = {}
     for result in results:
@@ -105,8 +99,41 @@ def sample_metadata(sample):
         sample_metadata["Year"] = result[2]
         sample_metadata["Lat"] = result[3]
         sample_metadata["Lon"] = result[4]
+       
     
     print(sample_metadata)
+    return jsonify(sample_metadata)
+
+app.route("/metadata/Histogram")
+def sample_metadata(sample):
+    """Return the MetaData for a given sample."""
+    if sample is None:
+        sample="Total:"
+    sel = [
+        Samples_Metadata.sample,
+        Samples_Metadata.NAME,
+        Samples_Metadata.YEAR,
+        Samples_Metadata.Latitude,
+        Samples_Metadata.Longitude,
+        Samples_Metadata.Total:,
+    ]
+
+    results = db.session.query(*sel).all()
+    df = pd.read_sql_query(results, db.session.bind)
+    final_df = df.sort_values(by=[‘Total:’], ascending=False).nlargest(10, ‘Total:’)
+
+
+    # Format the data to send as json
+    sample_metadata = {
+                  "Country": final_df.Sample.values.tolist(),
+                  "Place": final_df.Name.values.tolist(),
+                  "Year": final_df.Year.tolist(),
+		          "Lat": final_df.Lat.tolist(),
+		          "Lon": final_df.Lon.tolist(),
+		          "Total": final_df.Total:.tolist(),
+    }
+    print(sample_metadata)
+
     return jsonify(sample_metadata)
 
 # @app.route("/samples/<sample>")

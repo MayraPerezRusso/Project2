@@ -15,6 +15,7 @@ var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/light-v9/til
 // Link to GeoJSON
 var MetaData = `/metadata/${sample}/${sample2}`;
 var dataline=`/metadata/${sample}`;
+var histoURL = `/metadata/Histogram`;
 // var APILink = "http://data.beta.nyc//dataset/d6ffa9a4-c598-4b18-8caf-14abde6a5755/resource/74cdcc33-512f-439c-" +
 // "a43e-c09588c4b391/download/60dbe69bcd3640d5bedde86d69ba7666geojsonmedianhouseholdincomecensustract.geojson";
 
@@ -38,6 +39,24 @@ d3.json(MetaData, function(response) {
     radius: 20,
     blur:35
   }).addTo(myMap)
+
+  //Histogram_of_immingration_to_US
+
+  d3.json(histoURL).then(function(data) {
+    var trace1 = {
+      x: data[Total],
+      y: data[Country],
+      name: 'Top ten countries',
+      type: 'bar'
+    };
+  
+    var data = [trace1];
+  
+    var layout = {barmode: 'group'};
+  
+    Plotly.newPlot('myDiv', data, layout);
+  });
+
   // Create a new choropleth layer
   // geojson = L.choropleth(data, {
 
