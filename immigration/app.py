@@ -18,16 +18,17 @@ app = Flask(__name__)
 # # Database Setup
 # #################################################
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "DATA PATH HERE"
-db = SQLAlchemy(app)
+# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/TestSQLdb.sqlite"
+# db = SQLAlchemy(app)
 
-Base = automap_base()
-# # reflect the tables
-Base.prepare(db.engine, reflect=True)
+# Base = automap_base()
+# # # reflect the tables
+# Base.prepare(db.engine, reflect=True)
 
-# # Save references to each table
-Samples_Metadata = Base.classes.sample_metadata
-Samples = Base.classes.samples
+# # # Save references to each table
+# Samples_Metadata = Base.classes.sample_metadata
+# Samples = Base.classes.samples
+data=pd.read_csv('db/DataFinaltosqlite.csv')
 
 
 @app.route("/")
@@ -36,110 +37,43 @@ def index():
     return render_template("index.html")
 
 
-# @app.route("/names")
-# def names():
+@app.route("/names")
+def names():
+    # stmt = db.session.query(Samples).statement
+    # df = pd.read_sql_query(stmt, db.session.bind)
 
-#     # return jsonify(list(df.columns)[2:])
+    return jsonify(list(data.columns.values)[8:])   
 
-# @app.route("/metadata/<sample>")
-# def sample_metadata(sample):
-
-#     # return jsonify(sample_metadata)
-
-@app.route("/metadata/<sample>/<sample2>")
+@app.route("/metadata/<sample>/<sample2>/")
 def sample_metadata(sample, sample2):
-    """Return the MetaData for a given sample."""
     if sample is None:
-        sample="Total:"
+        sample="Total"
     if sample2 is None:
         sample2=2017
-    sel = [
-        Samples_Metadata.sample,
-        Samples_Metadata.NAME,
-        Samples_Metadata.YEAR,
-        Samples_Metadata.Latitude,
-        Samples_Metadata.Longitude,
-    ]
+    data1=data[data['Year'] == int(sample2)]
+    data1=data1[[sample, "NAME", "Year", "latitude", "longitude"]]
+    data1['country']=data1[sample]
+    data1=data1.sort_values(by=[sample], ascending=False)
+    sample_metadata = data1.to_dict('list')
 
-    results = db.session.query(*sel).filter(Samples_Metadata.YEAR == sample2).all()
-
-    # Create a dictionary entry for each row of metadata information!
-    sample_metadata = {}
-    for result in results:
-        sample_metadata["Country"] = result[0]
-        sample_metadata["Place"] = result[1]
-        sample_metadata["Year"] = result[2]
-        sample_metadata["Lat"] = result[3]
-        sample_metadata["Lon"] = result[4]
-    
-    print(sample_metadata)
-    return jsonify(sample_metadata)
-
-@app.route("/metadata/<sample>")
-def sample_metadata(sample):
-    """Return the MetaData for a given sample."""
-    if sample is None:
-        sample="Total:"
-    sel = [
-        Samples_Metadata.sample,
-        Samples_Metadata.NAME,
-        Samples_Metadata.YEAR,
-        Samples_Metadata.Latitude,
-        Samples_Metadata.Longitude,
-      
-    ]
-
-    results = db.session.query(*sel).all()
-    
-    # Create a dictionary entry for each row of metadata information!
-    sample_metadata = {}
-    for result in results:
-        sample_metadata["Country"] = result[0]
-        sample_metadata["Place"] = result[1]
-        sample_metadata["Year"] = result[2]
-        sample_metadata["Lat"] = result[3]
-        sample_metadata["Lon"] = result[4]
-       
-    
-    print(sample_metadata)
-    return jsonify(sample_metadata)
-
-app.route("/metadata/Histogram")
-def sample_metadata(sample):
-    """Return the MetaData for a given sample."""
-    if sample is None:
-        sample="Total:"
-    sel = [
-        Samples_Metadata.sample,
-        Samples_Metadata.NAME,
-        Samples_Metadata.YEAR,
-        Samples_Metadata.Latitude,
-        Samples_Metadata.Longitude,
-        Samples_Metadata.Total:,
-    ]
-
-    results = db.session.query(*sel).all()
-    df = pd.read_sql_query(results, db.session.bind)
-    final_df = df.sort_values(by=[‘Total:’], ascending=False).nlargest(10, ‘Total:’)
-
-
-    # Format the data to send as json
-    sample_metadata = {
-                  "Country": final_df.Sample.values.tolist(),
-                  "Place": final_df.Name.values.tolist(),
-                  "Year": final_df.Year.tolist(),
-		          "Lat": final_df.Lat.tolist(),
-		          "Lon": final_df.Lon.tolist(),
-		          "Total": final_df.Total:.tolist(),
-    }
-    print(sample_metadata)
+    # print(type(int(sample2)))
 
     return jsonify(sample_metadata)
 
-# @app.route("/samples/<sample>")
-# def samples(sample):
+@app.route("/metadata/<sample>/")
+def sample_metadata2(sample):
+    
+    data1=data[[sample, "NAME", "Year", "latitude", "longitude"]]
+    data2=data1.groupby(['Year']).sum()
+    data2['country']=data2[sample]
+    data2['Year']=[2014,2015,2016,2017]
+    
+    sample_metadata2 = data2.to_dict('list')
 
-#     # return jsonify(data)
+    # print(type(int(sample2)))
+
+    return jsonify(sample_metadata2)
+
 
 
 if __name__ == "__main__":
