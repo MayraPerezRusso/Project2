@@ -27,7 +27,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Immigration Statistics in USA</a>
+        <a class="navbar-brand" href="index.html">Immigration statics in USA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,8 +37,8 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
               <div class="dropdown-menu " aria-labelledby="dropdown01">
-                <a class="dropdown-item" href="#">Home</a>
-                <a class="dropdown-item" href="./documentation.html">Documentation</a>
+                <a class="dropdown-item" href="index.html">Home</a>
+                <a class="dropdown-item" href="documentation.html">Documentation</a>
               </div>
             </li>
           </ul>
@@ -50,36 +50,42 @@
         <div class="container">
           <!-- <h1 class="display-6">Maps of immigrates residence</h1> -->
           <div class="row">
-            <div class="col-md-4">
-              <h5>
-                Year:    
-                <select id="selDataset" onchange="optionChanged(this.value)"></select>
-              </h5>
-            </div>
-            <div class="col-md-8">              
-              <h5>Country from:
-                  <select id="selDataset2" onchange="optionChanged2(this.value)"></select>
-              </h5>   
+            <div class="col-md-12">
+              <h3>
+                  <p>
+                    The purpose of this exercise is to visualize the immigrants residing in United State cities based on an immigrant place of birth. 
+                    The data source for this study is US Bureau of Census (Fact Finder: https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml).
+                  </p>
+                  <P>
+                    To accomplish this, first we retrieve the immigrants data from Census table B05006. The table contains the immigrants by thier birth country and the US cities where they resides.  
+                  </P>
+                  <p>
+                    We analyze the number of immigrants living in the US cities and the country of thier birth. Also our analysis includes change in immigrants over the years.
+                  </p>
+                  <p>
+                      We build three plots to study the hypothesis and the selection for each plots is by Country of Birth and Year. 
+                      <ul>
+                            <li>
+                                Heat Map representing the immigrant population in the United States cities.
+                             </li>
+                            <li>
+                                Line plot displaying the change in immigrant population over the years.
+                            </li>
+                            <li>
+                                Bar plots showcasing the top ten cities with most immigrants population.
+                            </li>
+
+                      </ul>
+                  </p>
+              </h3>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12" id = "map1">
-            </div>
-          </div>
-          <div class="row">
-              <div class="col-md-6" id = "hist">
-              </div>
-              <div class="col-md-6" id = "line">
-                </div>
-          </div>
+        </div>
 
         </div>
         <!-- <div class="row"> -->
         <!-- <div class="col-md-12" ></div>         -->
-        <!-- </div> -->
-      </div>
-    
-      
+        <!-- </div> -->      
     
     </main>
   
