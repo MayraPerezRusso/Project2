@@ -65,7 +65,18 @@ function buildhistogram(sample, sample2) {
   
     var data = [trace1];
   
-    var layout = {barmode: 'group'};
+    var layout = {
+      barmode: 'group',
+      title: `Top 10 Cities`,
+      xaxis: {
+        tickangle: 45,
+        autorange: True
+        
+      },
+      yaxis: {
+        title: 'Immigrants Population'
+      }
+  };
   
     Plotly.newPlot('hist', data, layout);
   });
@@ -77,13 +88,23 @@ function buildline(sample) {
     var trace1 = {
       x: response.Year,
       y: response.country,
+      name: `${sample}`,
       mode: 'lines+markers',
       type: 'scatter'
     };
   
     var data = [trace1];
   
-    var layout = {barmode: 'group'};
+    var layout = {
+      barmode: 'group',
+      title: `${sample} Population over Years`,
+      xaxis: {
+        title: 'Years'
+      },
+      yaxis: {
+        title: 'Immigrants'
+      }
+      };
   
     Plotly.newPlot('line', data, layout);
   });
