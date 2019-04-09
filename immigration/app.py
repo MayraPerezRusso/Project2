@@ -46,10 +46,10 @@ def names():
 
 @app.route("/metadata/<sample>/<sample2>/")
 def sample_metadata(sample, sample2):
-    if sample is None:
-        sample="Total"
-    if sample2 is None:
-        sample2=2017
+    # if sample is "undefined":
+    #     sample="Total"
+    # if sample2 is "undefined":
+    #     sample2=2017
     data1=data[data['Year'] == int(sample2)]
     data1=data1[[sample, "NAME", "Year", "latitude", "longitude"]]
     data1['country']=data1[sample]
