@@ -18,7 +18,7 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 function buildmap(sample, sample2) {
   // L.heatLayer([38, -97, 0]).addTo(myMap)
-  // myMap.removeLayer(heat);
+  
 
 // Link to GeoJSON
 var MetaData = `/metadata/${sample}/${sample2}/`;
@@ -129,6 +129,7 @@ function optionChanged(newSample2) {
     // Fetch new data each time a new sample is selected
   console.log(`sample: ${country} \n sample2: ${newSample2}`);
   year=newSample2;
+  myMap.removeLayer(heat);
   buildmap(country, newSample2);
   buildhistogram(country, newSample2);
   buildline(country);
@@ -137,6 +138,7 @@ function optionChanged2(newSample) {
   // Fetch new data each time a new sample is selected
 console.log(`sample: ${newSample} \n sample2: ${year}`);
 country=newSample;
+myMap.removeLayer(heat);
 buildmap(newSample, year);
 buildhistogram(newSample, year);
 buildline(newSample);
