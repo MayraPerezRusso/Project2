@@ -27,7 +27,7 @@ var MetaData = `/metadata/${sample}/${sample2}/`;
 // Grab data with d3
 
 d3.json(MetaData).then(function(response){
-  console.log(response.country);
+  //console.log(response.country);
 
   let heatArray=[];
   // let clean=[];
@@ -37,19 +37,14 @@ d3.json(MetaData).then(function(response){
       // clean.push([response.latitude[i], response.longitude[i], 0]);
 
   }
-  console.log(heatArray);
-  
-  // var heat =L.heatLayer(clean,{
-  //   radius: 20,
-  //   blur:35,
-  // }).addTo(myMap)
+  //console.log(heatArray);
 
   heat =L.heatLayer(heatArray,{
     radius: 20,
     blur:35,
   }).addTo(myMap)
 
-});
+  });
 }
 
 //   //Histogram_of_immingration_to_US
@@ -59,22 +54,37 @@ function buildhistogram(sample, sample2) {
     var trace1 = {
       x: response.NAME.slice(0,10),
       y: response.country,
-      name: 'Top ten countries',
+      name: 'Top ten cities',
       type: 'bar'
     };
   
     var data = [trace1];
   
     var layout = {
+      autosize: false,
+      width: 600,
+      height: 700,
+      margin: {
+        l: 100,
+        r: 50,
+        b: 300,
+        t: 100,
+        pad: 4
+      },
       barmode: 'group',
-      title: `Top 10 Cities`,
+      title: {
+        text : `<b>Top 10 Cities for ${sample} Immigrates(${sample2})`,
+        font: {
+          size: 15,
+          color: '#3e4444'
+        }
+      },
       xaxis: {
-        tickangle: 45,
-        autorange: True
-        
+        tickangle: 90,
+        autorange: true
       },
       yaxis: {
-        title: 'Immigrants Population'
+        title: 'Immigrates Population'
       }
   };
   
@@ -96,13 +106,29 @@ function buildline(sample) {
     var data = [trace1];
   
     var layout = {
+      autosize: false,
+      width: 600,
+      height: 700,
+      margin: {
+        l: 100,
+        r: 50,
+        b: 300,
+        t: 100,
+        pad: 4
+      },
       barmode: 'group',
-      title: `${sample} Population over Years`,
+      title: {
+        text: `<b>${sample} Immigrates (2014-2017)</b>`,
+        font: {
+          size: 15,
+          color: '#3e4444'
+        }
+      },
       xaxis: {
         title: 'Years'
       },
       yaxis: {
-        title: 'Immigrants'
+        title: 'Immigrates Population'
       }
       };
   
@@ -132,7 +158,7 @@ function init() {
     .property("value", years[i]);
     }
     // sampleyear=selector2;
-    console.log(d3.select("#selDataset").node().value);
+    //console.log(d3.select("#selDataset").node().value);
     // Use the first sample from the list to build the initial plots
     country = samplecountry[0];//Country
     year = d3.select("#selDataset").node().value;//year
@@ -148,7 +174,7 @@ function init() {
 
 function optionChanged(newSample2) {
     // Fetch new data each time a new sample is selected
-  console.log(`sample: ${country} \n sample2: ${newSample2}`);
+  //console.log(`sample: ${country} \n sample2: ${newSample2}`);
   year=newSample2;
   myMap.removeLayer(heat);
   buildmap(country, newSample2);
@@ -156,13 +182,13 @@ function optionChanged(newSample2) {
   buildline(country);
 }
 function optionChanged2(newSample) {
-  // Fetch new data each time a new sample is selected
-console.log(`sample: ${newSample} \n sample2: ${year}`);
-country=newSample;
-myMap.removeLayer(heat);
-buildmap(newSample, year);
-buildhistogram(newSample, year);
-buildline(newSample);
+    // Fetch new data each time a new sample is selected
+  //console.log(`sample: ${newSample} \n sample2: ${year}`);
+  country=newSample;
+  myMap.removeLayer(heat);
+  buildmap(newSample, year);
+  buildhistogram(newSample, year);
+  buildline(newSample);
 }
 
 // Initialize the dashboard
