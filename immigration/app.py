@@ -28,7 +28,7 @@ app = Flask(__name__)
 # # # Save references to each table
 # Samples_Metadata = Base.classes.sample_metadata
 # Samples = Base.classes.samples
-data=pd.read_csv('db/DataFinaltosqlite.csv')
+data=pd.read_csv("~/immigration/db/dataFile.csv")
 
 
 @app.route("/")
